@@ -1,0 +1,38 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "animate-sass": "^0.8.2",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "sass": "^1.94.0",
+        "sass-embedded": "^1.97.0",
+        "vite": "^7.0.7"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.1.0",
+        "@fullcalendar/core": "^6.1.19",
+        "@fullcalendar/daygrid": "^6.1.19",
+        "@fullcalendar/interaction": "^6.1.19",
+        "@fullcalendar/list": "^6.1.19",
+        "@fullcalendar/timegrid": "^6.1.19",
+        "@googlemaps/js-api-loader": "^2.0.2",
+        "@kurkle/color": "^0.4.0",
+        "@popperjs/core": "^2.11.8",
+        "animate.css": "^4.1.1",
+        "bootstrap": "^5.3.8",
+        "chart.js": "^4.5.1",
+        "jquery": "^3.7.1",
+        "metismenu": "^3.0.7",
+        "pe7-icon": "^1.0.4",
+        "perfect-scrollbar": "^1.5.6",
+        "toastr": "^2.1.4",
+        "wnumb": "^1.2.0"
+    }
+}
