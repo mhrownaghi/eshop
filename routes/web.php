@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\ProductRelationController;
+use App\Models\ProductRelation;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -38,5 +40,12 @@ Route::prefix('admin')->group(function (){
         Route::get('product-images/{product_image}/edit', 'edit')->name('admin.product-images.edit');
         Route::put('product-images/{product_image}', 'update')->name('admin.product-images.update');
         Route::delete('product-images/{product_image}', 'destroy')->name('admin.product-images.destroy');
+    });
+
+    Route::controller(ProductRelationController::class)->group(function () {
+        Route::get('products/{product}/related-products', 'index')->name('admin.product-relations.index');
+        Route::get('product-relations/{product}/create', 'create')->name('admin.product-relations.create');
+        Route::post('product-relations/{product}', 'store')->name('admin.product-relations.store');
+        Route::delete('product-relations/{product_relation}', 'destroy')->name('admin.product-relations.destroy');
     });
 });

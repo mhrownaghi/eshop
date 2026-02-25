@@ -95,6 +95,7 @@
                                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                         </form>
                                         <a href="{{ route('admin.product-images.index', $product->slug) }}" class="btn btn-sm btn-secondary">Images</a>
+                                        <a href="{{ route('admin.product-relations.index', $product->slug) }}" class="btn btn-sm btn-secondary">Related Products</a>
                                     </td>
                                 </tr>
                             @empty

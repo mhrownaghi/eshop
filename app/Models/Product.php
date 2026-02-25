@@ -76,12 +76,13 @@ class Product extends Model
         return 'slug';
     }
 
-    public function getRelatedProducts(string $type): Collection
+    public function relatedProducts(): Collection
     {
-        $query = 'SELECT `related` FROM `product_related` WHERE `product` = ? AND `type` = ?';
-        $ids = DB::select($query, [$this->id, $type]);
-
-        return Product::all()->whereIn('id', $ids);
+        return DB::table('product_relations')
+            ->where('product', $this->id)
+            ->join('products', 'product_relations.related', '=', 'products.id')
+            ->select(['products.name', 'product_relations.id as relation_id', 'product_relations.type as relation_type'])
+            ->get();
     }
 
     public function addRelatedProduct(string $type, int $relatedProductId): bool
